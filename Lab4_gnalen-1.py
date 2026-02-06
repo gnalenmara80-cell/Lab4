@@ -1,4 +1,4 @@
-""" 
+"""
 Program Name: Lab4_Deal Cards
 Author: Gnalen Mara
 Purpose: This program simulates dealing a hand of cards. The user chooses how many
@@ -9,23 +9,30 @@ Date: 02/06/2026
 """
 
 import random
-# list of card values and suits
-values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K',] 
-suits = [ 'c', 'h', 's', 'd']  # clubs, diamonds, hearts, spades
-#this code ask the user fo the number of card they want
-num_cards = int(input("how many cards would you like to be dealt? "))
-# this code generates and empty list to store the player's hand
+
+# List of card values and suits
+values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+suits = ["c", "h", "s", "d"]  # clubs, hearts, spades, diamonds
+
+# Ask the user for the number of cards they want
+num_cards = int(input("How many cards would you like to be dealt? "))
+
+# Create an empty list to store the player's hand
 hand = []
-# this code generates random cards until the hand has the desired number of unique cards
+
+# Generate random unique cards
 while len(hand) < num_cards:
-    value = random.choice(values) 
-    suits = random.choice(suits)
-    card = value + suits
-    if card not in hand: 
+    value = random.choice(values)
+    suit = random.choice(suits)
+    card = value + suit
+
+    if card not in hand:
         hand.append(card)
-        # this code prints the player's hand
-        print("\nYour hand of cards:")
-        for card in hand:
-            print(card)
-    # output total number of cards
-    print(f"\nTotal number of cards in hand: {len(hand)}")
+
+# Print the player's hand
+print("\nYour hand of cards:")
+for card in hand:
+    print(card)
+
+# Print total number of cards
+print("\nTotal number of cards in hand:", len(hand))
